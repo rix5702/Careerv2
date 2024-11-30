@@ -1,0 +1,135 @@
+﻿
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="cs-body">
+    <div class="cs-container">
+        <h2>Register Form</h2>
+        <p>Let's build an outstanding profile and secure ideal career opportunities together.</p>
+
+        <form action="@Url.Action("SignUp", "Authen")" enctype="multipart/form-data" method="POST" class="cs-form">
+            <!-- Name -->
+            <div class="cs-input-group">
+                <label for="name" class="cs-label">
+                    <i class="cs-icon user-icon"></i> Full name
+                </label>
+                <input type="text" id="name" name="name" class="cs-input" placeholder="Full name" required>
+            </div>
+
+            <!-- DoB -->
+            <div class="cs-input-group">
+                <label for="dob" class="cs-label">
+                    <i class="cs-icon date-icon"></i> Date of birth
+                </label>
+                <input type="date" id="dob" name="dob" class="cs-input" placeholder="Date of birth" required>
+            </div>
+
+            <!-- Major -->
+            <div class="cs-input-group">
+                <label for="major" class="cs-label">
+                    <i class="cs-icon major-icon"></i> Major
+                </label>
+                <input type="text" id="major" name="major" class="cs-input" placeholder="Your Major" required>
+            </div>
+
+            <!-- Job City -->
+            <div class="cs-input-group">
+                <label for="jobCity" class="cs-label">
+                    <i class="cs-icon jobcity-icon"></i> City of employment
+                </label>
+                <input type="text" id="jobCity" name="jobCity" class="cs-input" placeholder="City of employment" required>
+            </div>
+
+            <!-- ProfileUser -->
+            <div class="cs-input-group">
+                <label for="profileUser" class="cs-label">
+                    <i class="cs-icon profile-icon"></i> Profile User
+                </label>
+                <textarea id="profileUser" name="profileUser" class="cs-input" placeholder="Your Profile" required></textarea>
+            </div>
+
+            <!-- Skills -->
+            <div class="cs-input-group">
+                <label for="skill" class="cs-label">
+                    <i class="cs-icon skill-icon"></i> Skills
+                </label>
+                <input type="text" id="skill" name="skill" class="cs-input" placeholder="Skills (Java, C#, PHP...)" required>
+            </div>
+
+            <!-- Expected Salary -->
+            <div class="cs-input-group">
+                <label for="expected" class="cs-label">
+                    <i class="cs-icon salary-icon"></i> Expected Salary
+                </label>
+                <input type="number" step="0.01" id="expected" name="expected" class="cs-input" placeholder="Expected Salary" required>
+            </div>
+
+            <!-- Experiences -->
+            <div class="cs-input-group">
+                <label for="experiences" class="cs-label">
+                    <i class="cs-icon experience-icon"></i> Experiences
+                </label>
+                <input type="number" id="experiences" name="experiences" class="cs-input" placeholder="Experiences" required>
+            </div>
+
+            <!-- Position -->
+            <div class="cs-input-group">
+                <label for="position" class="cs-label">
+                    <i class="cs-icon position-icon"></i> Job position
+                </label>
+                <input type="text" id="position" name="position" class="cs-input" placeholder="Job position" required>
+            </div>
+
+            <!-- Email -->
+            <div class="cs-input-group">
+                <label for="email" class="cs-label">
+                    <i class="cs-icon email-icon"></i> Email
+                </label>
+                <input type="email" id="email" name="email" class="cs-input" placeholder="Email" required>
+            </div>
+
+            <!-- Password -->
+            <div class="cs-input-group">
+                <label for="password" class="cs-label">
+                    <i class="cs-icon password-icon"></i> Password
+                </label>
+                <input type="password" id="password" name="password" class="cs-input" placeholder="Password" required>
+                <i class="cs-icon toggle-password"></i>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="cs-input-group">
+                <label for="confirmPassword" class="cs-label">
+                    <i class="cs-icon confirm-password-icon"></i>  Confirm Password
+                </label>
+                <input type="password" id="confirmPassword" name="confirmPassword" class="cs-input" placeholder="Confirm Password" required>
+                <i class="cs-icon toggle-password"></i>
+            </div>
+
+            <!-- Terms & Conditions Checkbox -->
+            <div class="cs-input-group">
+                <label>
+                    <input type="checkbox" required> I have read and agree to the Terms of Service and Privacy Policy
+                </label>
+            </div>
+            @if (ViewBag.signup != null)
+            {
+                <div class="cs-input-group">
+                    <label style="color: red">
+                        @ViewBag.signup
+                    </label>
+                </div>
+            }
+
+
+            <!-- Register Button -->
+            <div class="cs-input-group">
+                <button type="submit" class="cs-submit-btn">Register</button>
+            </div>
+            <div class="cs-input-group">
+                <a href="@Url.Action("SignUpForCompany", "Authen")" class="cs-submit-btn">Register for Company</a>
+            </div>
+        </form>
+    </div>
+</div>
